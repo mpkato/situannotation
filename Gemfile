@@ -67,3 +67,9 @@ group :development, :test do
 	gem 'rspec-rails'
 	gem "factory_girl_rails"
 end
+
+# production
+group :production do
+  gem 'mysql2', '0.3.18'
+end
+
