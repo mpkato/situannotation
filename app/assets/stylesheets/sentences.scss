@@ -1,0 +1,17 @@
+// Place all the styles related to the sentences controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#sentence_wrapper {
+  min-height: 200px;
+}
+
+#sentence {
+  width: 800px;
+  margin: 30px auto;
+  font-size: 24px;
+}
+
+#sentence_button {
+  margin-bottom: 50px;
+}

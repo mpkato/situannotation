@@ -1,0 +1,18 @@
+%h1 Sentences
+
+%ul{class: "nav nav-tabs", role: "tablist"}
+  %li{role: "presentation", class: "active"}
+    =link_to "Unfinished", "#unfinished", aria: {controls: "unfinished"},
+      role: "tab", data: {toggle: "tab"}
+  %li{role: "presentation"}
+    =link_to "Finished", "#finished", aria: {controls: "finished"},
+      role: "tab", data: {toggle: "tab"}
+
+  %div{class: "tab-content"}
+    %div{role: "tabpanel", class: "tab-pane active", id: "unfinished"}
+      = render partial: "sentences", 
+        locals: {sentences: @sentences.select {|s| not @results.has_key?(s.id)}}
+    %div{role: "tabpanel", class: "tab-pane", id: "finished"}
+      = render partial: "sentences", 
+        locals: {sentences: @sentences.select {|s| @results.has_key?(s.id)}}
+

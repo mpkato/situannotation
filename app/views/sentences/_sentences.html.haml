@@ -1,0 +1,14 @@
+%table.table
+  %thead
+    %tr
+      %th SID
+      %th BODY
+      %th Finished at
+      %th
+  %tbody
+    - sentences.each do |sentence|
+      %tr
+        %td=sentence.sid
+        %td=truncate(sentence.body)
+        %td=@results.has_key?(sentence.id) ? @results[sentence.id].updated_at : ""
+        %td=link_to 'Start', sentence_path(sentence), class: 'btn btn-primary btn-xs'

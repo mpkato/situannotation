@@ -1,0 +1,24 @@
+%h1=@sentence.sid
+
+%div#sentence_wrapper
+  %div#sentence
+    =@sentence.body
+  %div#sentence_button
+    =link_to "SELECT", "#", id: "select", class: "btn btn-default btn-block btn-lg"
+
+= form_for([@sentence, @result], html: {class: 'form-horizontal'}) do |f|
+  .form-group
+    =f.text_area :body, class: "form-control"
+  .form-group
+    =f.submit "Done", class: "btn btn-primary btn-block btn-lg"
+%hr
+%div.row
+  .col-md-1
+    =link_to 'Prev', sentence_prev_path(@sentence), 
+      class: 'text-left btn btn-default'
+  %div{class: "col-md-1 col-md-offset-10"}
+    =link_to 'Next', sentence_next_path(@sentence), 
+      class: 'text-right btn btn-default'
+%hr
+%div
+  =link_to "Back", sentences_path, class: "btn btn-default"

@@ -73,3 +73,9 @@ group :production do
   gem 'mysql2', '0.3.18'
 end
 
+# bulk insert
+gem 'activerecord-import'
+
+# haml
+gem 'haml-rails'
+gem 'erb2haml'
