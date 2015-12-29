@@ -22,4 +22,10 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: 5
+  username: situannotation
+  database: situanmotation
+  password: <%= ENV['SITUANNOTATION_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
